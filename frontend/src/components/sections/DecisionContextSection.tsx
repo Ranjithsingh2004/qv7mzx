@@ -17,10 +17,10 @@ const COVERAGE_LEVELS = [
  * How to act on the measured error -- and, explicitly, what this dataset
  * cannot tell you.
  *
- * The challenge supplies national wind actuals and forecasts and nothing else.
- * There is no demand, no price, no thermal stack and no cost here, so this
- * section does not produce a procurement recommendation. The scenario tool
- * below is driven entirely by a number the user types in, and says so.
+ * The agreed data scope is national wind actuals and forecasts, and nothing
+ * else. There is no demand, no price, no thermal stack and no cost here, so
+ * this section does not produce a procurement recommendation. The scenario
+ * tool below is driven entirely by a number the user types in, and says so.
  */
 export function DecisionContextSection({
   analysis,
@@ -102,7 +102,7 @@ export function DecisionContextSection({
             <p className="callout__title">Deliberately out of scope</p>
             <p className="callout__body">
               This product is built on national wind actuals and forecasts alone, which is the
-              scope the brief sets. It therefore contains no consumer demand, no wholesale or
+              agreed scope. It therefore contains no consumer demand, no wholesale or
               balancing prices, no thermal availability and no procurement cost. It does not
               produce a buy or sell recommendation, and any figure resembling one would be
               invented rather than measured.

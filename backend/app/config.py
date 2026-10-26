@@ -21,7 +21,7 @@ class Settings(BaseSettings):
     elexon_max_retries: int = 3
 
     # --- Analysis defaults (see docs/METHODOLOGY.md) ---
-    # The challenge scopes the work to purchase decisions taken in January 2026.
+    # The agreed analysis scope is purchase decisions taken in January 2026.
     default_decision_from: str = "2026-01-01"
     default_decision_to: str = "2026-01-31"
     # Assumed day-ahead decision cutoff: 09:00 Europe/London on the day before

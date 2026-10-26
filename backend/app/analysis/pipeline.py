@@ -3,8 +3,8 @@
 Pure and synchronous -- all I/O happens in the service layer above. That keeps
 the whole analysis reproducible from fixtures in tests, with no network.
 
-The period is expressed the way the brief does: the days on which *purchase
-decisions* are made. Delivery follows ``cutoff.days_before`` later, so a month
+The period is expressed the way the desk thinks about it: the days on which
+*purchase decisions* are made. Delivery follows ``cutoff.days_before`` later, so a month
 of January decisions delivers from 2 January to 1 February. Both windows are
 returned, because conflating them is an easy and expensive mistake.
 """

@@ -77,8 +77,8 @@ cutoff(D) = cutoff_time, Europe/London, on day D − cutoff_days_before
 
 > This is a documented product assumption, not a confirmed market rule. GB
 > day-ahead auctions close mid-morning on D−1, so 09:00 sits ahead of gate
-> closure and every forecast it admits was genuinely available beforehand. The
-> challenge does not specify an operational cutoff. Both the time and the
+> closure and every forecast it admits was genuinely available beforehand. No
+> operational cutoff is specified in the agreed scope. Both the time and the
 > number of days are configurable in the UI and the API, and the cutoff
 > comparison shows how the answer moves as the deadline moves.
 
@@ -222,7 +222,7 @@ a forecast produced for system operation may cover a wider fleet. If the two
 describe different populations, part of the +1,748 MW bias is a **scope
 difference**, not forecaster skill.
 
-This cannot be resolved from the two datasets the challenge permits, and
+This cannot be resolved from the two datasets in scope, and
 Windsight does not pretend otherwise. The figures are reported as measured, the
 caveat is shown in the product next to them, and the decomposition into bias
 and dispersion is presented precisely so a reader can see how much of the
@@ -232,7 +232,7 @@ measure of genuine forecast uncertainty.
 
 ## 11. Out of scope, by design
 
-The challenge supplies national wind actuals and forecasts and nothing else.
+The agreed scope is national wind actuals and forecasts, and nothing else.
 Windsight therefore contains **no** demand, prices, thermal availability,
 procurement cost or buy/sell recommendation. Any such figure would be invented
 rather than measured.

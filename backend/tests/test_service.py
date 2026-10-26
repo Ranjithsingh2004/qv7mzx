@@ -32,7 +32,7 @@ def service(settings):
 
 
 class TestParseRequest:
-    def test_defaults_target_the_challenge_window(self, settings):
+    def test_defaults_target_the_configured_window(self, settings):
         request = parse_request(settings)
         assert request.decision_from == dt.date(2026, 1, 1)
         assert request.decision_to == dt.date(2026, 1, 31)

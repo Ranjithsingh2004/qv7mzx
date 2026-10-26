@@ -252,8 +252,7 @@ Two deliberate boundaries:
 │   ├── vite.config.ts
 │   └── package.json
 ├── docs/
-│   ├── METHODOLOGY.md        # Full method, assumptions, results, caveats
-│   └── VIDEO_SCRIPT.md       # Demo script and checklist
+│   └── METHODOLOGY.md        # Full method, assumptions, results, caveats
 ├── docker-compose.yml
 ├── vercel.json               # Build, function config, /api and SPA rewrites
 ├── requirements.txt          # Dependencies for the Vercel Python function
@@ -542,7 +541,7 @@ the same single-origin topology using nginx.
 3. **Resolution mismatch is resolved by a choice.** Hourly forecasts against
    half-hourly actuals requires a reduction; two are offered and the headline
    moves by under 1% between them, but it is still a modelling decision.
-4. **No demand, price or cost.** Out of scope by the brief, so no procurement
+4. **No demand, price or cost.** Out of scope for this engagement, so no procurement
    recommendation is produced. The residual-demand panel is explicitly driven
    by a user-supplied figure.
 5. **Uncertainty bands assume normality.** Wind forecast errors are skewed and
@@ -566,9 +565,7 @@ the same single-origin topology using nginx.
 
 ## AI tool usage
 
-AI coding assistance was used during development, which the challenge brief
-asks to be stated. It was used the way any other tool is: to move faster
-through boilerplate, scaffolding and first drafts.
+AI coding assistance was used during development, alongside the usual tooling.
 
 The engineering decisions are mine and are documented with their reasoning in
 [`docs/METHODOLOGY.md`](docs/METHODOLOGY.md) — the decision-cutoff assumption,

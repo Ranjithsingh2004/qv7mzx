@@ -16,9 +16,9 @@ import { useTheme } from './hooks/useTheme';
 import './App.css';
 
 /**
- * Defaults match the challenge scope: purchase decisions taken in January
- * 2026, judged against the forecast available by 09:00 London on the day
- * before delivery.
+ * Defaults match the agreed analysis scope: purchase decisions taken in
+ * January 2026, judged against the forecast available by 09:00 London on the
+ * day before delivery.
  */
 const DEFAULT_PARAMS: AnalysisParams = {
   decisionFrom: '2026-01-01',
@@ -117,7 +117,7 @@ export default function App() {
       <footer className="footer">
         <p>
           Windsight — day-ahead wind forecast accuracy, built on Elexon BMRS open data (FUELHH and
-          WINDFOR). Pilot build for evaluation; not a trading system.
+          WINDFOR). Pilot build; not a trading system.
         </p>
         <p className="footer__meta">
           {meta.data ? `API metric definitions loaded · ${health.data?.version ?? ''}` : ''}

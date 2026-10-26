@@ -8,7 +8,7 @@ interface Preset {
 }
 
 /**
- * The challenge scopes the work to purchase decisions taken in January 2026,
+ * The agreed analysis scope is purchase decisions taken in January 2026,
  * which is why that is the default and the first preset. The shorter presets
  * are for drilling into a week or a single day without typing dates.
  */

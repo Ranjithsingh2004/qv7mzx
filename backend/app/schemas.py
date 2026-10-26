@@ -372,8 +372,8 @@ def meta_payload(settings) -> dict:
             "alongside because it is defined for every matched hour.",
             "FUELHH wind outturn and the WINDFOR forecast are not documented by Elexon as "
             "covering an identical set of wind assets. A persistent level difference between "
-            "them may therefore reflect scope as well as forecast skill; the brief limits this "
-            "product to these two datasets, so the two cannot be separated here.",
+            "them may therefore reflect scope as well as forecast skill; this product is "
+            "limited to these two datasets, so the two cannot be separated here.",
         ],
         "sign_convention": "error = forecast - actual; positive means wind was over-forecast.",
     }
