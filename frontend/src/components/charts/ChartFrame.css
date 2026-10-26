@@ -1,0 +1,20 @@
+.frame { display: flex; flex-direction: column; gap: var(--space-3); min-width: 0; }
+
+.frame__plot { width: 100%; min-width: 0; }
+
+.frame__summary {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  cursor: pointer;
+  padding: var(--space-1) 0;
+  width: fit-content;
+}
+.frame__summary:hover { color: var(--text-primary); }
+
+.frame__scroll {
+  margin-top: var(--space-3);
+  max-height: 320px;
+  overflow: auto;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}

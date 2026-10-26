@@ -1,0 +1,39 @@
+.dtable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.8125rem;
+}
+
+.dtable__th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: var(--surface-2);
+  text-align: left;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  letter-spacing: 0.02em;
+  padding: var(--space-2) var(--space-3);
+  border-bottom: 1px solid var(--border-strong);
+  white-space: nowrap;
+}
+
+.dtable__th--num { text-align: right; }
+
+.dtable__td {
+  padding: var(--space-2) var(--space-3);
+  border-bottom: 1px solid var(--border);
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+
+.dtable__td--num { text-align: right; color: var(--text-primary); }
+
+.dtable tbody tr:hover .dtable__td { background: var(--surface-2); }
+
+.dtable__empty {
+  padding: var(--space-5);
+  text-align: center;
+  color: var(--text-muted);
+}

@@ -1,0 +1,51 @@
+.tip {
+  background: var(--surface-raised);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-pop);
+  padding: var(--space-3);
+  min-width: 190px;
+}
+
+.tip__heading {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-bottom: var(--space-2);
+  letter-spacing: 0.02em;
+}
+
+.tip__rows { margin: 0; display: flex; flex-direction: column; gap: var(--space-1); }
+
+.tip__row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+
+.tip__label {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.tip__key {
+  width: 12px;
+  height: 0;
+  border-top: 2px solid currentColor;
+  border-radius: 2px;
+  flex: none;
+}
+.tip__key--dashed { border-top-style: dashed; }
+
+/* The value is the strong element: the legend's hierarchy, inverted. */
+.tip__value {
+  margin: 0;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
