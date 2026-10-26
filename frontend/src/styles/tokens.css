@@ -1,0 +1,128 @@
+/*
+ * Design tokens.
+ *
+ * Colours come from a validated categorical palette: adjacent-pair CVD
+ * separation and the lightness/chroma/contrast gates were checked with a
+ * palette validator in both modes, against the two surfaces declared here.
+ * Dark values are their own steps for the dark surface, not a flip of light.
+ *
+ * Series identity is never carried by colour alone -- the forecast line is
+ * dashed, every multi-series chart keeps a legend, and the detail table
+ * repeats every plotted value as text.
+ */
+:root {
+  color-scheme: light;
+
+  /* Surfaces and chrome */
+  --page: #f9f9f7;
+  --surface-1: #fcfcfb;
+  --surface-2: #f3f3f0;
+  --surface-raised: #ffffff;
+  --border: rgba(11, 11, 11, 0.1);
+  --border-strong: #ddddd6;
+  --grid: #e1e0d9;
+  --axis: #c3c2b7;
+
+  /* Ink */
+  --text-primary: #0b0b0b;
+  --text-secondary: #52514e;
+  --text-muted: #898781;
+  --text-on-fill: #ffffff;
+
+  /* Categorical series (slot order is the CVD-safety mechanism) */
+  --series-actual: #2a78d6;   /* slot 1 - blue:   measured outturn */
+  --series-forecast: #eb6834; /* slot 2 - orange: day-ahead forecast */
+  --series-third: #1baf7a;    /* slot 3 - aqua:   supporting measures */
+
+  /* Diverging pair for signed error: warm = over-forecast, cool = under */
+  --diverge-over: #e34948;
+  --diverge-under: #2a78d6;
+  --diverge-mid: #f0efec;
+
+  /* Status (reserved; never reused as a series colour) */
+  --status-good: #0ca30c;
+  --status-warning: #fab219;
+  --status-serious: #ec835a;
+  --status-critical: #d03b3b;
+
+  /* Type */
+  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, monospace;
+
+  /* Spacing scale */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+
+  --radius-sm: 4px;
+  --radius: 8px;
+  --radius-lg: 12px;
+
+  --shadow-card: 0 1px 2px rgba(11, 11, 11, 0.04), 0 1px 1px rgba(11, 11, 11, 0.03);
+  --shadow-pop: 0 8px 24px rgba(11, 11, 11, 0.12);
+
+  --max-width: 1400px;
+}
+
+/* Dark values are declared under both scopes: the media query follows the OS,
+   the data-theme scope follows the in-app toggle, and the toggle wins both
+   ways. */
+@media (prefers-color-scheme: dark) {
+  :root:where(:not([data-theme='light'])) {
+    color-scheme: dark;
+    --page: #0d0d0d;
+    --surface-1: #1a1a19;
+    --surface-2: #222221;
+    --surface-raised: #232322;
+    --border: rgba(255, 255, 255, 0.1);
+    --border-strong: #383835;
+    --grid: #2c2c2a;
+    --axis: #383835;
+    --text-primary: #f0efec;
+    --text-secondary: #c3c2b7;
+    --text-muted: #898781;
+    --series-actual: #3987e5;
+    --series-forecast: #d95926;
+    --series-third: #199e70;
+    --diverge-over: #e66767;
+    --diverge-under: #3987e5;
+    --diverge-mid: #383835;
+    --status-good: #0ca30c;
+    --status-warning: #fab219;
+    --status-serious: #ec835a;
+    --status-critical: #d03b3b;
+    --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.4);
+    --shadow-pop: 0 8px 24px rgba(0, 0, 0, 0.55);
+  }
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --page: #0d0d0d;
+  --surface-1: #1a1a19;
+  --surface-2: #222221;
+  --surface-raised: #232322;
+  --border: rgba(255, 255, 255, 0.1);
+  --border-strong: #383835;
+  --grid: #2c2c2a;
+  --axis: #383835;
+  --text-primary: #f0efec;
+  --text-secondary: #c3c2b7;
+  --text-muted: #898781;
+  --series-actual: #3987e5;
+  --series-forecast: #d95926;
+  --series-third: #199e70;
+  --diverge-over: #e66767;
+  --diverge-under: #3987e5;
+  --diverge-mid: #383835;
+  --status-good: #0ca30c;
+  --status-warning: #fab219;
+  --status-serious: #ec835a;
+  --status-critical: #d03b3b;
+  --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-pop: 0 8px 24px rgba(0, 0, 0, 0.55);
+}
