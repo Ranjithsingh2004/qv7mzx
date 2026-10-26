@@ -1,0 +1,52 @@
+# Local development and review stack.
+#
+#   docker compose up --build        then open http://localhost:8080
+#
+# nginx serves the built frontend and forwards /api to the backend, so the
+# browser sees a single origin and the setup mirrors the deployed topology.
+services:
+  backend:
+    build:
+      context: ./backend
+      secrets:
+        - extra_ca
+    image: windsight-backend
+    environment:
+      # Elexon is public; no API key exists for these datasets and none is set.
+      APP_LOG_LEVEL: INFO
+      APP_CACHE_TTL_SECONDS: "900"
+    ports:
+      # Exposed so the API and its docs can be opened directly during review.
+      - "8000:8000"
+    healthcheck:
+      test:
+        - CMD
+        - python
+        - -c
+        - "import urllib.request,sys; sys.exit(0 if urllib.request.urlopen('http://127.0.0.1:8000/api/health', timeout=4).status == 200 else 1)"
+      interval: 15s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./frontend
+      secrets:
+        - extra_ca
+    image: windsight-frontend
+    ports:
+      - "8080:80"
+    depends_on:
+      backend:
+        condition: service_healthy
+    restart: unless-stopped
+
+# Optional CA bundle for networks behind a TLS-inspecting proxy. On an ordinary
+# network EXTRA_CA_CERT is unset, the empty default is mounted, and both builds
+# ignore it. Set EXTRA_CA_CERT=/path/to/ca-bundle.crt where a corporate
+# certificate is in play.
+secrets:
+  extra_ca:
+    file: ${EXTRA_CA_CERT:-./.empty-ca.pem}
